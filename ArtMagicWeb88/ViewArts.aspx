@@ -4,9 +4,6 @@
 
 
 
-    <div class="centered">
-                <asp:Label ID="welcomeMsg" runat="server">welcome</asp:Label>
-            </div>
 
 
 </asp:Content>
