@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ArtMagicWeb88
 {
-    public partial class Contact : Page
+    public partial class ViewArts : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
