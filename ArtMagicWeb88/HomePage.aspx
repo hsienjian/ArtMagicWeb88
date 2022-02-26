@@ -26,27 +26,56 @@
 
     Artist
     <br />
-    <asp:DataList ID="DataList1" runat="server" Width="100%" RepeatDirection="Horizontal"  RepeatColumns="3" ShowFooter="False" ShowHeader="False">
-            <ItemTemplate>
-                <td style='text-align: center; padding: 10px;'>
-                    <img class="img-thumbnail" alt="artImg" style="height: 280px; width: 280px" src='<%#"data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("artImg")) %>' /><br />
-                    <asp:LinkButton ID="moreDetials" CommandName="ImageButtonClick" runat="server"><h6 style="color:#675A51; font-weight:bold"><%#Eval ("artName") %></h6>
-                    <p style="color:black; font-size: 14px">introduction</p>
-                    <p style="color:black; font-size: 14px">introduction</p>
-                        <br />
-                    </asp:LinkButton>
-                
-                </td>
-            </ItemTemplate>
+    <asp:DataList ID="DataList1" runat="server" Width="100%" RepeatDirection="Horizontal"  RepeatColumns="3" ShowFooter="False" ShowHeader="False" DataKeyField="Id" DataSourceID="product">
+        <ItemTemplate>
+            Id:
+            <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+            <br />
+            productName:
+            <asp:Label ID="productNameLabel" runat="server" Text='<%# Eval("productName") %>' />
+            <br />
+            artistName:
+            <asp:Label ID="artistNameLabel" runat="server" Text='<%# Eval("artistName") %>' />
+            <br />
+            price:
+            <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
+            <br />
+            image:
+            <asp:Label ID="imageLabel" runat="server" Text='<%# Eval("image") %>' />
+            <br />
+            quantity:
+            <asp:Label ID="quantityLabel" runat="server" Text='<%# Eval("quantity") %>' />
+            <br />
+            description:
+            <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
+            <br />
+<br />
+        </ItemTemplate>
 
         </asp:DataList>
     
 
     
     
+    <asp:SqlDataSource ID="product" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Table]"></asp:SqlDataSource>
     <br />
+    
+
+    
+    
     <br />
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT FROM"></asp:SqlDataSource>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="product">
+        <Columns>
+            <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+            <asp:BoundField DataField="productName" HeaderText="productName" SortExpression="productName" />
+            <asp:BoundField DataField="artistName" HeaderText="artistName" SortExpression="artistName" />
+            <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
+            <asp:BoundField DataField="image" HeaderText="image" SortExpression="image" />
+            <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
+            <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
+        </Columns>
+    </asp:GridView>
+    <br />
     <br />
     <br />
     <br />
