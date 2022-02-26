@@ -130,6 +130,7 @@
     <Content Include="img\best2019.jpg" />
     <Content Include="img\best2020.jpg" />
     <Content Include="img\best2021.jpg" />
+    <Content Include="img\homepage_banner.png" />
     <Content Include="img\welcome.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
