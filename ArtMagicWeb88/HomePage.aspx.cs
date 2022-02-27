@@ -15,7 +15,7 @@ namespace ArtMagicWeb88
         protected void Page_Load(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmdImage = new SqlCommand("SELECT * FROM Table", con);
+            SqlCommand cmdImage = new SqlCommand("SELECT * FROM Product", con);
         }
     }
 }
