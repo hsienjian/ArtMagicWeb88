@@ -43,13 +43,23 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:FileUpload ID="FileUpload1" runat="server" />
+    Name: <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+        <br />
+    Description: <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
+        <br />
+    Price : <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+        <br />
+    Image: <asp:FileUpload ID="FileUpload1" runat="server" />
+        <br />
     <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload" />
     <hr />
     <asp:GridView ID="gvImages" runat="server" AutoGenerateColumns="false" OnRowDataBound="OnRowDataBound">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Image Id" />
             <asp:BoundField DataField="Name" HeaderText="Name" />
+            <asp:BoundField DataField="Description" HeaderText="Description" />
+            <asp:BoundField DataField="Price" HeaderText="Price" />
+            <asp:BoundField DataField="ImgName" HeaderText="ImgName" />
             <asp:TemplateField HeaderText="Image">
                 <ItemTemplate>
                     <asp:Image ID="Image1" runat="server" />

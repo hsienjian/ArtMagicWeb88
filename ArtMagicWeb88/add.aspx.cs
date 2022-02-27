@@ -55,10 +55,13 @@ namespace ArtMagicWeb88
             string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(constr))
             {
-                string sql = "INSERT INTO test VALUES(@Name, @ContentType, @Data)";
+                string sql = "INSERT INTO test VALUES(@Name,@Description,@Price,@ImgName,@ContentType,@Data)";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Name", Path.GetFileName(FileUpload1.PostedFile.FileName));
+                    cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                    cmd.Parameters.AddWithValue("@Description", txtDesc.Text);
+                    cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtPrice.Text));
+                    cmd.Parameters.AddWithValue("@ImgName", Path.GetFileName(FileUpload1.PostedFile.FileName));
                     cmd.Parameters.AddWithValue("@ContentType", FileUpload1.PostedFile.ContentType);
                     cmd.Parameters.AddWithValue("@Data", bytes);
                     conn.Open();
