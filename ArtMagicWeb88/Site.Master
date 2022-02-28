@@ -54,9 +54,10 @@
                         <li><a runat="server" href="#">About Us</a></li>
                         <li><a runat="server" href="#">Gallery</a></li>
                         <li><a runat="server" href="#">Artists</a></li>
-                        
+                        <li><a runat="server" href="#">Login</a></li>
                         
                     </ul>
+                    
                 </div> 
             </div>
         </div>

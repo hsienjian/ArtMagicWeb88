@@ -17,5 +17,10 @@ namespace ArtMagicWeb88
             con.Open();
             SqlCommand cmdImage = new SqlCommand("SELECT * FROM Product", con);
         }
+
+        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

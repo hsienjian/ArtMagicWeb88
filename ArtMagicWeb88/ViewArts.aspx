@@ -2,6 +2,13 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <br />
+    <h1 class="text-center"><strong><em>Gallery</em></strong></h1>
+    <br />
+    <br />
+    <br />
+    <br />
+
     <asp:DataList ID="ListofArt" runat="server" Width="100%" RepeatDirection="Horizontal" OnItemCommand="ListofArt_OnItemCommand" RepeatColumns="3" ShowFooter="False" ShowHeader="False" OnSelectedIndexChanged="ListofArt_SelectedIndexChanged">
             <ItemTemplate>
                 <td style='text-align: center; padding: 10px;'>

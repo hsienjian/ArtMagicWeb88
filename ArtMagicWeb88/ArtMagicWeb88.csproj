@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="add.aspx" />
     <Content Include="App_Data\ArtMagicWebDB.mdf" />
     <Content Include="App_Data\ArtMagicWebDB_log.ldf">
       <DependentUpon>ArtMagicWebDB.mdf</DependentUpon>
@@ -136,6 +137,7 @@
     <Content Include="img\best2021.jpg" />
     <Content Include="img\homepage_banner.png" />
     <Content Include="img\welcome.jpg" />
+    <Content Include="Order.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -172,6 +174,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add.aspx.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add.aspx.designer.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
@@ -190,6 +199,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
