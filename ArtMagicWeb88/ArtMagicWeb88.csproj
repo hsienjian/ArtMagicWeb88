@@ -129,6 +129,12 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="img\art1.jpg" />
+    <Content Include="img\art2.jpg" />
+    <Content Include="img\art3.jpg" />
+    <Content Include="img\art4.jpg" />
+    <Content Include="img\art5.jpg" />
+    <Content Include="img\art6.jpg" />
     <Content Include="img\best2016.jpg" />
     <Content Include="img\best2017.jpg" />
     <Content Include="img\best2018.jpg" />

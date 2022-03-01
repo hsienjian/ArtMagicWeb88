@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -14,13 +15,9 @@ namespace ArtMagicWeb88
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmdImage = new SqlCommand("SELECT * FROM Product", con);
+            
         }
 
-        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
