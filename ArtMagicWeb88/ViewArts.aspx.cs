@@ -15,32 +15,27 @@ namespace ArtMagicWeb88
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
+            SqlConnection con;
+            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        protected void ListofArt_OnItemCommand(object source, DataListCommandEventArgs e)
-        {
-            if (e.CommandName == "ImageButtonClick")
+            con = new SqlConnection(strCon);
+            con.Open();
             {
-                string artID = ((HiddenField)e.Item.FindControl("HiddenID")).Value;
-                con.Open();
-                string artSelected = "SELECT * FROM ART WHERE artID='" + artID + "'";
-                SqlCommand artFound = new SqlCommand(artSelected, con);
-                SqlDataReader artDetails = artFound.ExecuteReader();
-                if (artDetails.HasRows)
+                using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [dbo].[Product]", con))
                 {
-                    while (artDetails.Read())
-                    {
-                        string artIDPicked = artDetails["artID"].ToString();
-                        Response.Redirect("ArtDetail.aspx?art=" + artIDPicked);
-                    }
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    DataList1.DataSource = dt;
+                    DataList1.DataBind();
                 }
             }
+            con.Close();
         }
 
-        protected void ListofArt_SelectedIndexChanged(object sender, EventArgs e)
-        {
+       
 
-        }
+
+
+
     }
 }
