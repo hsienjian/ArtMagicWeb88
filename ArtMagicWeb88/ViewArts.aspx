@@ -26,7 +26,9 @@
                         Stock Left: <strong><%# Eval("quantity") %></strong>
                         <br />
                         <br />
-                        <asp:Button ID="addToCart" runat="server" Text="Add To Cart" />
+                        <asp:Button ID="btnCart" runat="server" Text="Add To Cart" OnClick="btnCart_Click" />
+                        &nbsp;&nbsp;
+                        <asp:Button ID="btnWishList" runat="server" Text="Add To Wish List" OnClick="btnWishList_Click" />
                     </td>
                       
                 </tr>
