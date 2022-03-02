@@ -32,10 +32,9 @@ namespace ArtMagicWeb88
             con.Close();
         }
 
-       
+        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }
