@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="Content/bootstrap.min.css"/>
     <style type="text/css">
         body
         {
@@ -42,29 +43,55 @@
     </style>
 </head>
 <body>
+        <!--Inverted Navbar Start Here-->  
+    <!--<nav> tag  start with classes .navbar and .navbar-inverse -->  
+    <nav class="navbar navbar-inverse">  
+        <div class="container-fluid">  
+            <!--Navbar Header Start Here-->  
+            <div class="navbar-header">  
+                <a class="navbar-brand" href="view.aspx">ArtMagicWeb</a>   
+            </div>  
+            <!--Navbar Header End Here-->  
+            <!--Menu Start Here-->  
+            <ul class="nav navbar-nav">  
+                <li><a href="view.aspx">Home</a></li>  
+                <li class="active"><a href="add.aspx">Add</a></li>  
+                <li><a href="UpdateImage.aspx">Edit Image</a></li>  
+            </ul>  
+            <!--Menu End Here-->  
+        </div>  
+    </nav>  
+    <!--<nav> tag end-->  
+    <!--Inverted Navbar End Here-->  
+    <script src="js/jquery-2.1.4.min.js"></script>  
+    <script src="js/bootstrap.min.js"></script> 
     <form id="form1" runat="server">
+    &nbsp;&nbsp;
     UserID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtUserId" runat="server" Width="165px"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;
     Price :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
         <br />
         <br />
+    &nbsp;
     Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtName" runat="server" style="margin-left: 0px"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;
     Quantity : <asp:TextBox ID="txtQuantity" runat="server"></asp:TextBox>
         <br />
         <br />
+    &nbsp;
     Description: <asp:TextBox ID="txtDesc" runat="server" Height="92px" Width="371px"></asp:TextBox>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
-    Image:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:FileUpload ID="FileUpload1" runat="server" />
-        <br />
+    &nbsp;
+    Image:<asp:FileUpload ID="FileUpload1" runat="server" />
+        &nbsp;<br />
         <br />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <hr />
-    <asp:GridView ID="gvImages" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+    <asp:GridView ID="gvImages" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
         <Columns>
             <asp:BoundField DataField="UserId" HeaderText="User Id" />
             <asp:BoundField DataField="Id" HeaderText="Art Id" />
@@ -79,15 +106,15 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
-        <FooterStyle BackColor="White" ForeColor="#000066" />
-        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-        <RowStyle ForeColor="#000066" />
-        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-        <SortedAscendingHeaderStyle BackColor="#007DBB" />
-        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-        <SortedDescendingHeaderStyle BackColor="#00547E" />
+        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+        <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+        <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+        <RowStyle ForeColor="#8C4510" BackColor="#FFF7E7" />
+        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#FFF1D4" />
+        <SortedAscendingHeaderStyle BackColor="#B95C30" />
+        <SortedDescendingCellStyle BackColor="#F1E5CE" />
+        <SortedDescendingHeaderStyle BackColor="#93451F" />
     </asp:GridView>
     <div id="dialog" style="display: none">
     </div>
