@@ -44,8 +44,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            &nbsp;
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/add.aspx">Add</asp:HyperLink>
+&nbsp;<asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/UpdateImage.aspx">Edit Image</asp:HyperLink>
             <br />
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" OnRowDataBound="OnRowDataBound" DataSourceID="SqlDataSource1" AllowSorting="True">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" OnRowDataBound="OnRowDataBound" DataSourceID="SqlDataSource1" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="UserId" HeaderText="UserId" InsertVisible="False" ReadOnly="True" SortExpression="UserId" />
@@ -65,6 +68,15 @@
                 <EmptyDataTemplate>
                     <br />
                 </EmptyDataTemplate>
+                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                <SortedDescendingHeaderStyle BackColor="#93451F" />
             </asp:GridView>
             <div id="dialog" style="display: none">
             </div>

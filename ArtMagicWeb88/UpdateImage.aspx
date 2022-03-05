@@ -45,8 +45,10 @@
 <body>
 <form id="form1" runat="server">  
     <div>      
-    Image: <asp:FileUpload ID="FileUpload1" runat="server" />
+        <h2 style="text-decoration: underline;">Edit Image</h2>
+    Image:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:FileUpload ID="FileUpload1" runat="server" />
         <br />
+        <small><mark>(Click the edit button before insert image)</mark></small><br />
     <hr />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" CellPadding="6" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit">
             <Columns>  
