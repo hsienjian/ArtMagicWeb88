@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+
     <Content Include="AboutUs.aspx" />
     <Content Include="add.aspx" />
     <Content Include="App_Data\ArtMagicWebDB.mdf" />
@@ -112,6 +113,11 @@
       <DependentUpon>ArtMagicWebDB.mdf</DependentUpon>
     </Content>
     <Content Include="checkOut.aspx" />
+
+    <Content Include="About.aspx" />
+    <Content Include="artist.aspx" />
+    <Content Include="Contact.aspx" />
+
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -174,7 +180,11 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+
     <Content Include="ViewArts.aspx" />
+
+    <Content Include="testing1234.aspx" />
+
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -197,9 +207,21 @@
       <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+
     <Compile Include="CartItem.cs" />
     <Compile Include="checkOut.aspx.cs">
       <DependentUpon>checkOut.aspx</DependentUpon>
+
+    <Compile Include="artist.aspx.cs">
+      <DependentUpon>artist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="artist.aspx.designer.cs">
+      <DependentUpon>artist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="checkOut.aspx.designer.cs">
@@ -237,12 +259,21 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+
     <Compile Include="ViewArts.aspx.cs">
       <DependentUpon>ViewArts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewArts.aspx.designer.cs">
       <DependentUpon>ViewArts.aspx</DependentUpon>
+
+    <Compile Include="testing1234.aspx.cs">
+      <DependentUpon>testing1234.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testing1234.aspx.designer.cs">
+      <DependentUpon>testing1234.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
