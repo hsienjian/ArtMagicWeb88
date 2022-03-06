@@ -209,7 +209,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
 
     <Compile Include="CartItem.cs" />
-    <Compile Include="checkOut.aspx.cs">
+    <Compile Include="checkOut.aspx.cs"/>
       <DependentUpon>checkOut.aspx</DependentUpon>
 
     <Compile Include="artist.aspx.cs">
@@ -264,7 +264,7 @@
       <DependentUpon>ViewArts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ViewArts.aspx.designer.cs">
+    <Compile Include="ViewArts.aspx.designer.cs"/>
       <DependentUpon>ViewArts.aspx</DependentUpon>
 
     <Compile Include="testing1234.aspx.cs">
