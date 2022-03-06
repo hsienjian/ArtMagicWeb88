@@ -31,5 +31,8 @@
             <asp:Label ID="lblTotal" runat="server" EnableViewState="false"></asp:Label>
         </strong> 
     </div>
+    <asp:Button ID="Button1" runat="server" Text="Update Cart" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="Button2" runat="server" Text="Checkout" />
     <br />
 </asp:Content>
