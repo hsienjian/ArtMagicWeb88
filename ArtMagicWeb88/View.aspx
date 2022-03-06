@@ -1,11 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="View.aspx.cs" Inherits="ArtMagicWeb88.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteArtist.Master" CodeBehind="View.aspx.cs" Inherits="ArtMagicWeb88.WebForm1" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" href="Content/bootstrap.min.css"/>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <style type="text/css">
         body
         {
@@ -41,31 +36,7 @@
             cursor: pointer;
         }
     </style>
-</head>
-<body>
-    <!--Inverted Navbar Start Here-->  
-    <!--<nav> tag  start with classes .navbar and .navbar-inverse -->  
-    <nav class="navbar navbar-inverse">  
-        <div class="container-fluid">  
-            <!--Navbar Header Start Here-->  
-            <div class="navbar-header">  
-                <a class="navbar-brand" href="view.aspx">ArtMagicWeb</a>   
-            </div>  
-            <!--Navbar Header End Here-->  
-            <!--Menu Start Here-->  
-            <ul class="nav navbar-nav">  
-                <li class="active"><a href="view.aspx">Home</a></li>  
-                <li><a href="add.aspx">Add</a></li>  
-                <li><a href="UpdateImage.aspx">Edit Image</a></li>  
-            </ul>  
-            <!--Menu End Here-->  
-        </div>  
-    </nav>  
-    <!--<nav> tag end-->  
-    <!--Inverted Navbar End Here-->  
-    <script src="js/jquery-2.1.4.min.js"></script>  
-    <script src="js/bootstrap.min.js"></script> 
-    <form id="form1" runat="server">
+
         <div>
             &nbsp;
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/add.aspx">Add</asp:HyperLink>
@@ -149,6 +120,4 @@
             });
         });
     </script>
-    </form>
-</body>
-</html>
+    </asp:Content>

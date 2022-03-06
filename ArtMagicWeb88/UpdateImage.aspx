@@ -1,10 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateImage.aspx.cs" Inherits="ArtMagicWeb88.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteArtist.Master" CodeBehind="UpdateImage.aspx.cs" Inherits="ArtMagicWeb88.WebForm2" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
     <link rel="stylesheet" href="Content/bootstrap.min.css"/>
         <style type="text/css">
         body
@@ -41,32 +38,6 @@
             cursor: pointer;
         }
     </style>
-</head>
-
-<body>
-        <!--Inverted Navbar Start Here-->  
-    <!--<nav> tag  start with classes .navbar and .navbar-inverse -->  
-    <nav class="navbar navbar-inverse">  
-        <div class="container-fluid">  
-            <!--Navbar Header Start Here-->  
-            <div class="navbar-header">  
-                <a class="navbar-brand" href="view.aspx">ArtMagicWeb</a>  
-            </div>  
-            <!--Navbar Header End Here-->  
-            <!--Menu Start Here-->  
-            <ul class="nav navbar-nav">  
-                <li><a href="view.aspx">Home</a></li>  
-                <li><a href="add.aspx">Add</a></li>  
-                <li class="active"><a href="UpdateImage.aspx">Edit Image</a></li>  
-            </ul>  
-            <!--Menu End Here-->  
-        </div>  
-    </nav>  
-    <!--<nav> tag end-->  
-    <!--Inverted Navbar End Here-->  
-    <script src="js/jquery-2.1.4.min.js"></script>  
-    <script src="js/bootstrap.min.js"></script> 
-<form id="form1" runat="server">  
     <div>      
         <h2 style="text-decoration: underline;">Edit Image</h2>
     Image:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:FileUpload ID="FileUpload1" runat="server" />
@@ -132,6 +103,4 @@
     </script>
       
     </div>  
-</form>  
-</body>
-</html>
+    </asp:Content>
