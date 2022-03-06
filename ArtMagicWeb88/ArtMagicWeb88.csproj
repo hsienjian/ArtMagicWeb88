@@ -119,6 +119,10 @@
       <DependentUpon>test.mdf</DependentUpon>
     </Content>
     <Content Include="artist.aspx" />
+    <Content Include="App_Data\ArtMagicWeb.mdf" />
+    <Content Include="App_Data\ArtMagicWeb_log.ldf">
+      <DependentUpon>ArtMagicWeb.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
 
     <Content Include="Content\bootstrap-theme.css" />
@@ -140,12 +144,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Image\imaga1.png" />
-    <Content Include="Image\image2.png" />
-    <Content Include="View.aspx" />
-    <Content Include="UpdateImage.aspx" />
-    <Content Include="WebForm3.aspx" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="RegisterPage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\art1.jpg" />
     <Content Include="img\art2.jpg" />
@@ -246,12 +246,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="cart.aspx.cs">
-      <DependentUpon>cart.aspx</DependentUpon>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cart.aspx.designer.cs">
-      <DependentUpon>cart.aspx</DependentUpon>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -322,6 +322,12 @@
     </Compile>
     <Compile Include="WebForm3.aspx.designer.cs">
       <DependentUpon>WebForm3.aspx</DependentUpon>
+    <Compile Include="RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
