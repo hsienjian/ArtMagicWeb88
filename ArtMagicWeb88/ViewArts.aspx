@@ -1,12 +1,17 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ViewArts.aspx.cs" Inherits="ArtMagicWeb88.ViewArts" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    <style>
+        img{
+            height:300px;
+            width:300px;
+        }
+    </style>
     <br />
     <h1 class="text-center"><strong><em>Gallery</em></strong></h1>
     <br />
     <br />
-    <asp:DataList ID="DataList1" runat="server"  RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="3" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2" GridLines="Both" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" OnRowDataBound="OnRowDataBound">
+    <asp:DataList ID="DataList1" runat="server"  RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="3" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2" GridLines="Both" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" OnItemCommand="DataList1_ItemCommand" OnItemDataBound="Item_Bound" >
         <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
         <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
         <ItemStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
@@ -15,7 +20,8 @@
                 <tr>
                     
                     <td class="text-justify">
-                        <asp:Image ID="Image1" runat="server" Height="300px" Width="300px" ImageUrl='<%# Eval("imgPath") %>' ></asp:Image>
+
+                        <img src='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Data")) %>'  />
                         <br />
                         Product Name: <%# Eval("productName") %>
                         <br />
@@ -26,9 +32,9 @@
                         Stock Left: <strong><%# Eval("quantity") %></strong>
                         <br />
                         <br />
-                        <asp:Button ID="btnCart" runat="server" Text="Add To Cart" OnClick="btnCart_Click" />
+                        <asp:Button ID="btnCart" runat="server" Text="Add To Cart" OnClick="btnCart_Click" CommandName="addtocart" />
                         &nbsp;&nbsp;
-                        <asp:Button ID="btnWishList" runat="server" Text="Add To Wish List" OnClick="btnWishList_Click" />
+                        <asp:Button ID="btnWishList" runat="server" Text="Add To Wish List" OnClick="btnWishList_Click" CommandName="addtowishlist" />
                     </td>
                       
                 </tr>
