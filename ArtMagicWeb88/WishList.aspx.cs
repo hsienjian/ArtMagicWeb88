@@ -75,6 +75,37 @@ namespace ArtMagicWeb88
             }
         }
 
+        protected void WishList1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int id = Convert.ToInt32(WishList1.DataKeys[e.RowIndex].Value);
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            String query = "Delete from Wishlist where Id = " + id;
+            SqlCommand cmd = new SqlCommand(query, con);
+            try
+            {
+                con.Open();
+                int row = cmd.ExecuteNonQuery();
+
+                if (row > 0)
+                {
+                    Page.ClientScript.RegisterClientScriptBlock
+                        (this.GetType(), "K", "swal('Deleted!','Record is removed from Wishlist!','success')", true);
+                    GetData();
+                }
+            }
+            catch (Exception e1)
+            {
+                lblError.Visible = true;
+                lblError.Text = "Database connection error!";
+                throw;
+            }
+            finally
+            {
+                con.Close();
+
+            }
+        }
 
     }
 }
