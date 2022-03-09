@@ -46,7 +46,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/HomePage.aspx"><asp:Image ID="Image1" runat="server" ImageUrl="~/img/logo.png" /></a>
+                    <a class="navbar-brand" runat="server" href="~/HomePage.aspx"><asp:Image ID="Image1" runat="server" ImageUrl="~/img/logo.png" Height="25" Width="150" /></a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">

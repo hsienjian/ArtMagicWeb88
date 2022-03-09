@@ -29,7 +29,58 @@ namespace ArtMagicWeb88
                     CartList.DataBind();
                 }
             }
+
+            if (!IsPostBack)
+            {
+
+
+                GetData();
+                calculateTotal();
+            }
+
             con.Close();
         }
+
+        private void GetData()
+        {
+            String mq = "select * from Product where Id IN(select Id from Cart where username='" + Session["username"].ToString() + "')";
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            con.Open();
+
+            cmd.CommandText = mq;
+            cmd.Connection = con;
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            CartList.DataSource = ds;
+            CartList.DataBind();
+
+            con.Close();
+        }
+
+        protected void calculateTotal()
+        {
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            String query = "select sum(price*" + 1 + ") AS Total from Product where Id IN(select Id from Cart where username = '" + Session["username"].ToString() + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+
+
+            string total = cmd.ExecuteScalar().ToString();
+            Session["total"] = total;
+            lblTotal.Text = total;
+
+        }
+
+
+
+
+
+
     }
+
+
 }
