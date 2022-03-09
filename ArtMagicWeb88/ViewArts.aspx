@@ -11,10 +11,10 @@
     <h1 class="text-center"><strong><em>Gallery</em></strong></h1>
     <br />
     <br />
-    <asp:DataList ID="DataList1" runat="server"  RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="3" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2" GridLines="Both" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" OnItemCommand="DataList1_ItemCommand" OnItemDataBound="Item_Bound" >
-        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
-        <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
-        <ItemStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+    <asp:DataList ID="DataList1" runat="server"  RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="4" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" GridLines="Both" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" OnItemCommand="DataList1_ItemCommand" OnItemDataBound="Item_Bound" >
+        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+        <ItemStyle BackColor="White" ForeColor="#330099" />
         <ItemTemplate>
             <table>
                 <tr>
@@ -32,7 +32,7 @@
                         Stock Left: <strong><%# Eval("quantity") %></strong>
                         <br />
                         <br />
-                        <asp:Button ID="btnCart" runat="server" Text="Add To Cart" OnClick="btnCart_Click" CommandName="addtocart" />
+                        <asp:Button ID="btnCart" runat="server" Text="Add To Cart" OnClick="btnCart_Click" CommandName="addtocart"/>
                         &nbsp;&nbsp;
                         <asp:Button ID="btnWishList" runat="server" Text="Add To Wish List" OnClick="btnWishList_Click" CommandName="addtowishlist" />
                     </td>
@@ -41,7 +41,7 @@
                 
             </table> 
         </ItemTemplate>
-        <SelectedItemStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+        <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
     </asp:DataList>
      <br />
     <br />

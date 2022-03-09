@@ -26,7 +26,7 @@ namespace ArtMagicWeb88
             {
                 if (Request.QueryString["addtowishlist"] != null && Session["username"] != null)
                 {
-                    String query = "insert into Wishlist(username,Id) values('" + Session["username"].ToString() + "'," + Request.QueryString["addtowishlist"].ToString() + ")";
+                    String query = "INSERT INTO Wishlist(username,Id) values('" + Session["username"].ToString() + "'," + Request.QueryString["addtowishlist"].ToString() + ")";
 
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = query;
@@ -39,7 +39,7 @@ namespace ArtMagicWeb88
                 else if (Request.QueryString["addtocart"] != null && Session["username"] != null)
                 {
                     String id = Request.QueryString["addtocart"].ToString();
-                    String query = "insert into Cart(username,Id) values('" + Session["username"].ToString() + "'," + Request.QueryString["addtocart"].ToString() + ")";
+                    String query = "INSERT INTO Cart(username,Id) values('" + Session["username"].ToString() + "'," + Request.QueryString["addtocart"].ToString() + ")";
 
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = query;
@@ -51,7 +51,7 @@ namespace ArtMagicWeb88
 
                     SqlCommand cmd1 = con.CreateCommand();
                     cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "Update Product SET qty=qty-" + 1 + "Where Id=" + id;
+                    cmd1.CommandText = "UPDATE Product SET qty=qty-" + 1 + "Where Id=" + id;
                     cmd1.ExecuteNonQuery();
 
 
@@ -151,14 +151,33 @@ namespace ArtMagicWeb88
 
         //}
 
-    
+
 
 
 
         protected void btnCart_Click(object sender, EventArgs e)
         {
-            
-            
+            if (Request.QueryString["addtocart"] != null && Session["username"] != null)
+            {
+                String id = Request.QueryString["addtocart"].ToString();
+                String query = "INSERT INTO Cart(username,Id) values('" + Session["username"].ToString() + "'," + Request.QueryString["addtocart"].ToString() + ")";
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = query;
+                cmd.Connection = con;
+                cmd.ExecuteNonQuery();
+                ClientScript.RegisterClientScriptBlock
+              (this.GetType(), "K", "swal('Cart Added!','Product has been added into Cart','success')", true);
+
+                SqlCommand cmd1 = con.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "UPDATE Product SET qty=qty-" + 1 + "Where Id=" + id;
+                cmd1.ExecuteNonQuery();
+
+
+            }
         }
 
         protected void btnWishList_Click(object sender, EventArgs e)
