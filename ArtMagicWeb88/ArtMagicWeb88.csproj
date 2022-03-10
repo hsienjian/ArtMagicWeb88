@@ -123,6 +123,7 @@
     <Content Include="App_Data\ArtMagicWeb_log.ldf">
       <DependentUpon>ArtMagicWeb.mdf</DependentUpon>
     </Content>
+    <Content Include="ArtLoginPage.aspx" />
     <Content Include="Contact.aspx" />
 
     <Content Include="Content\bootstrap-theme.css" />
@@ -133,6 +134,9 @@
     <Content Include="Content\artist.css" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="css\loginPage.css" />
+    <Content Include="CustomerLoginPage.aspx" />
+    <Content Include="CustomerRegisterPage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -145,8 +149,24 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="HomePage.aspx" />
-    <Content Include="LoginPage.aspx" />
-    <Content Include="RegisterPage.aspx" />
+    <Content Include="img\art1.jpg" />
+    <Content Include="img\art2.jpg" />
+    <Content Include="img\art3.jpg" />
+    <Content Include="img\art4.jpg" />
+    <Content Include="img\art5.jpg" />
+    <Content Include="img\art6.jpg" />
+    <Content Include="img\ArtMagic logo.jpeg" />
+    <Content Include="img\best2014.jpg" />
+    <Content Include="img\best2015.jpg" />
+    <Content Include="img\best2016.jpg" />
+    <Content Include="img\best2017.jpg" />
+    <Content Include="img\best2018.jpg" />
+    <Content Include="img\best2019.jpg" />
+    <Content Include="img\best2020.jpg" />
+    <Content Include="img\best2021.jpg" />
+    <Content Include="img\homepage_banner.png" />
+    <Content Include="img\welcome.jpg" />
+    <Content Include="ArtistRegisterPage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\art1.jpg" />
     <Content Include="img\art2.jpg" />
@@ -228,6 +248,12 @@
     </Compile>
     <Compile Include="artist.aspx.designer.cs">
       <DependentUpon>artist.aspx</DependentUpon>
+    <Compile Include="ArtLoginPage.aspx.cs">
+      <DependentUpon>ArtLoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtLoginPage.aspx.designer.cs">
+      <DependentUpon>ArtLoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -243,6 +269,19 @@
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    <Compile Include="CustomerLoginPage.aspx.cs">
+      <DependentUpon>CustomerLoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerLoginPage.aspx.designer.cs">
+      <DependentUpon>CustomerLoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegisterPage.aspx.cs">
+      <DependentUpon>CustomerRegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerRegisterPage.aspx.designer.cs">
+      <DependentUpon>CustomerRegisterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -254,12 +293,12 @@
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.aspx.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
+    <Compile Include="ArtistRegisterPage.aspx.cs">
+      <DependentUpon>ArtistRegisterPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginPage.aspx.designer.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
+    <Compile Include="ArtistRegisterPage.aspx.designer.cs">
+      <DependentUpon>ArtistRegisterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

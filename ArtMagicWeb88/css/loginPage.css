@@ -1,0 +1,125 @@
+﻿body {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    width: 0%;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    width: 1500px;
+}
+
+.main {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    width: 525px;
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+}
+
+.main1 {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    width: 525px;
+    position: relative;
+    height: 850px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    margin: 50px;
+}
+
+
+
+
+
+#chk {
+    display: none;
+}
+
+.login {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 290px;
+    height: 40px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 10px auto;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+select {
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    margin: 10px auto;
+    padding: 5px;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    display: flex;
+    margin: 10px auto;
+    padding: 5px;
+    outline: none;
+}
+
+button {
+    width: 10%;
+    height: 40px;
+    margin: 0px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+    button:hover {
+        background: #6d44b8;
+    }
+
+
+#chk:checked ~ .login label {
+    transform: scale(.6);
+}

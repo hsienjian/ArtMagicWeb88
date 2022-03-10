@@ -15,9 +15,9 @@ namespace ArtMagicWeb88
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        
+
     }
 }
