@@ -13,63 +13,37 @@ using System.Data.SqlClient;
 namespace ArtMagicWeb88
 {
     public partial class WebForm3 : System.Web.UI.Page
-    {
-        //Connection String from web.config File  
-        string cs = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-        SqlConnection con;
-        SqlDataAdapter adapt;
-        DataTable dt;
+    { 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!this.IsPostBack)
             {
-                ShowData();
+                DataTable dt = this.GetData();
+                dlCustomers.DataSource = dt;
+                dlCustomers.DataBind();
             }
-        }
-        //ShowData method for Displaying Data in Gridview  
-        protected void ShowData()
-        {
-            dt = new DataTable();
-            con = new SqlConnection(cs);
-            con.Open();
-            adapt = new SqlDataAdapter("Select ID,Name,City from tbl_Employee", con);
-            adapt.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-            }
-            con.Close();
         }
 
-        protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
+        private DataTable GetData()
         {
-            //NewEditIndex property used to determine the index of the row being edited.  
-            GridView1.EditIndex = e.NewEditIndex;
-            ShowData();
-        }
-        protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
-        {
-            //Finding the controls from Gridview for the row which is going to update  
-            Label id = GridView1.Rows[e.RowIndex].FindControl("lbl_ID") as Label;
-            TextBox name = GridView1.Rows[e.RowIndex].FindControl("txt_Name") as TextBox;
-            TextBox city = GridView1.Rows[e.RowIndex].FindControl("txt_City") as TextBox;
-            con = new SqlConnection(cs);
-            con.Open();
-            //updating the record  
-            SqlCommand cmd = new SqlCommand("Update tbl_Employee set Name='" + name.Text + "',City='" + city.Text + "' where ID=" + Convert.ToInt32(id.Text), con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            //Setting the EditIndex property to -1 to cancel the Edit mode in Gridview  
-            GridView1.EditIndex = -1;
-            //Call ShowData method for displaying updated data  
-            ShowData();
-        }
-        protected void GridView1_RowCancelingEdit(object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
-        {
-            //Setting the EditIndex property to -1 to cancel the Edit mode in Gridview  
-            GridView1.EditIndex = -1;
-            ShowData();
+            string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM test"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
         }
     }
 }
