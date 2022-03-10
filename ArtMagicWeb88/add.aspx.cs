@@ -25,6 +25,7 @@ namespace ArtMagicWeb88
             con.Open();
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM test", con))
+                    using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Product", con))
                     {
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
@@ -66,6 +67,18 @@ namespace ArtMagicWeb88
                     cmd.Parameters.AddWithValue("@ImgName", Path.GetFileName(FileUpload1.PostedFile.FileName));
                     cmd.Parameters.AddWithValue("@ContentType", FileUpload1.PostedFile.ContentType);
                     cmd.Parameters.AddWithValue("@Data", bytes);
+                string sql = "INSERT INTO Product VALUES(@productName,@artistName,@Price,@quantity,@description,@image,@contentType,@data)";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    
+                    cmd.Parameters.AddWithValue("@productName", productName.Text);
+                    cmd.Parameters.AddWithValue("@artistName", artistName.Text);
+                    cmd.Parameters.AddWithValue("@price", decimal.Parse(price.Text));
+                    cmd.Parameters.AddWithValue("@quantity", quantity.Text);
+                    cmd.Parameters.AddWithValue("@description", desc.Text);
+                    cmd.Parameters.AddWithValue("@image", Path.GetFileName(FileUpload1.PostedFile.FileName));
+                    cmd.Parameters.AddWithValue("@contentType", FileUpload1.PostedFile.ContentType);
+                    cmd.Parameters.AddWithValue("@data", bytes);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();

@@ -103,6 +103,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+
+    <Content Include="AboutUs.aspx" />
+    <Content Include="add.aspx" />
+    <Content Include="App_Data\ArtMagicWebDB.mdf" />
+    <Content Include="App_Data\ArtMagicWebDB_log.ldf">
+      <DependentUpon>ArtMagicWebDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="checkOut.aspx" />
+
     <Content Include="About.aspx" />
     <Content Include="App_Data\test.mdf" />
     <Content Include="App_Data\test_log.ldf">
@@ -110,6 +119,7 @@
     </Content>
     <Content Include="artist.aspx" />
     <Content Include="Contact.aspx" />
+
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -117,6 +127,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\artist.css" />
     <Content Include="Default.aspx" />
+    <Content Include="HomePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -134,6 +145,21 @@
     <Content Include="UpdateImage.aspx" />
     <Content Include="WebForm3.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="img\art1.jpg" />
+    <Content Include="img\art2.jpg" />
+    <Content Include="img\art3.jpg" />
+    <Content Include="img\art4.jpg" />
+    <Content Include="img\art5.jpg" />
+    <Content Include="img\art6.jpg" />
+    <Content Include="img\best2016.jpg" />
+    <Content Include="img\best2017.jpg" />
+    <Content Include="img\best2018.jpg" />
+    <Content Include="img\best2019.jpg" />
+    <Content Include="img\best2020.jpg" />
+    <Content Include="img\best2021.jpg" />
+    <Content Include="img\homepage_banner.png" />
+    <Content Include="img\welcome.jpg" />
+    <Content Include="cart.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -164,21 +190,35 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="add.aspx" />
+    <Content Include="ViewArts.aspx" />
+    <Content Include="testing1234.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="add.aspx.cs">
+      <DependentUpon>add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="add.aspx.designer.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+
+    <Compile Include="CartItem.cs" />
+    <Compile Include="checkOut.aspx.cs"/>
+      <DependentUpon>checkOut.aspx</DependentUpon>
+
     <Compile Include="artist.aspx.cs">
       <DependentUpon>artist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,20 +228,28 @@
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="checkOut.aspx.designer.cs">
+      <DependentUpon>checkOut.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -231,6 +279,19 @@
     </Compile>
     <Compile Include="SiteArtist.Master.designer.cs">
       <DependentUpon>SiteArtist.Master</DependentUpon>
+    <Compile Include="ViewArts.aspx.cs">
+      <DependentUpon>ViewArts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewArts.aspx.designer.cs"/>
+      <DependentUpon>ViewArts.aspx</DependentUpon>
+
+    <Compile Include="testing1234.aspx.cs">
+      <DependentUpon>testing1234.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testing1234.aspx.designer.cs">
+      <DependentUpon>testing1234.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
