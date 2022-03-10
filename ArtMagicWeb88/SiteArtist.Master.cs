@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ArtMagicWeb88
 {
-    public partial class testing1234 : System.Web.UI.Page
+    public partial class SiteArtist : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

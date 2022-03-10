@@ -15,48 +15,83 @@ namespace ArtMagicWeb88
     {
 
         /// <summary>
+
+        /// txtUserId control.
+
         /// form1 control.
+
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.TextBox txtUserId;
+
+        /// <summary>
+        /// txtPrice control.
+
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// productName control.
+
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.TextBox txtPrice;
+
+        /// <summary>
+        /// txtName control.
+
         protected global::System.Web.UI.WebControls.TextBox productName;
 
         /// <summary>
         /// artistName control.
+
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.TextBox txtName;
+
+        /// <summary>
+        /// txtQuantity control.
+
         protected global::System.Web.UI.WebControls.TextBox artistName;
 
         /// <summary>
         /// price control.
+
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
+
+        /// <summary>
+        /// txtDesc control.
+
         protected global::System.Web.UI.WebControls.TextBox price;
 
         /// <summary>
         /// quantity control.
+
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.TextBox txtDesc;
+
         protected global::System.Web.UI.WebControls.TextBox quantity;
 
         /// <summary>
@@ -67,6 +102,7 @@ namespace ArtMagicWeb88
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox desc;
+
 
         /// <summary>
         /// FileUpload1 control.
