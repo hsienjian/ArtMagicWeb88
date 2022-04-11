@@ -111,12 +111,18 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="ArtistRegisterPage.aspx" />
+    <Content Include="ArtLoginPage.aspx" />
     <Content Include="checkOut.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\homepage.css" />
+    <Content Include="css\loginPage.css" />
+    <Content Include="CustomerLoginPage.aspx" />
+    <Content Include="CustomerRegisterPage.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -130,7 +136,11 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="img\logo.png" />
+    <Content Include="UpdateImage.aspx" />
+    <Content Include="View.aspx" />
+    <Content Include="css\viewArtPage.css" />
     <Content Include="WishList.aspx" />
+    <Content Include="login.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\art1.jpg" />
     <Content Include="img\art2.jpg" />
@@ -199,6 +209,20 @@
       <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ArtistRegisterPage.aspx.cs">
+      <DependentUpon>ArtistRegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistRegisterPage.aspx.designer.cs">
+      <DependentUpon>ArtistRegisterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtLoginPage.aspx.cs">
+      <DependentUpon>ArtLoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtLoginPage.aspx.designer.cs">
+      <DependentUpon>ArtLoginPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CartItem.cs" />
     <Compile Include="checkOut.aspx.cs">
       <DependentUpon>checkOut.aspx</DependentUpon>
@@ -206,6 +230,20 @@
     </Compile>
     <Compile Include="checkOut.aspx.designer.cs">
       <DependentUpon>checkOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerLoginPage.aspx.cs">
+      <DependentUpon>CustomerLoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerLoginPage.aspx.designer.cs">
+      <DependentUpon>CustomerLoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegisterPage.aspx.cs">
+      <DependentUpon>CustomerRegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerRegisterPage.aspx.designer.cs">
+      <DependentUpon>CustomerRegisterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -224,6 +262,13 @@
     <Compile Include="cart.aspx.designer.cs">
       <DependentUpon>cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="login.Master.cs">
+      <DependentUpon>login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.Master.designer.cs">
+      <DependentUpon>login.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -238,6 +283,27 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteArtist.Master.cs">
+      <DependentUpon>SiteArtist.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteArtist.Master.designer.cs">
+      <DependentUpon>SiteArtist.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateImage.aspx.cs">
+      <DependentUpon>UpdateImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateImage.aspx.designer.cs">
+      <DependentUpon>UpdateImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewArts.aspx.cs">
       <DependentUpon>ViewArts.aspx</DependentUpon>
@@ -266,6 +332,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="SiteArtist.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

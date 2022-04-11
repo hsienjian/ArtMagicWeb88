@@ -16,22 +16,30 @@ namespace ArtMagicWeb88
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Artist_id"] != null)
+            {
+                //Label1.Text = Session["Artist_id"].ToString();
+            }
+
             if (!this.IsPostBack)
             {
             SqlConnection con;
             string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-            con = new SqlConnection(strCon);
-            con.Open();
+
+                con = new SqlConnection(strCon);
+                con.Open();
                 {
-                    using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Product", con))
+                    using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM product Where userid = "+ Session["Artist_id"].ToString(), con))
                     {
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
                         gvImages.DataSource = dt;
                         gvImages.DataBind();
+                        
                     }
                 }
+
             }
         }
 
@@ -55,18 +63,19 @@ namespace ArtMagicWeb88
             string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(constr))
             {
-                string sql = "INSERT INTO Product VALUES(@productName,@artistName,@Price,@quantity,@description,@image,@contentType,@data)";
+
+                string sql = "INSERT INTO product VALUES(@userid,@productName,@artistName,@Price,@Quantity,@Description,@image,@ContentType,@Data)";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    
-                    cmd.Parameters.AddWithValue("@productName", productName.Text);
-                    cmd.Parameters.AddWithValue("@artistName", artistName.Text);
-                    cmd.Parameters.AddWithValue("@price", decimal.Parse(price.Text));
-                    cmd.Parameters.AddWithValue("@quantity", quantity.Text);
-                    cmd.Parameters.AddWithValue("@description", desc.Text);
+                    cmd.Parameters.AddWithValue("@userid", Session["Artist_id"].ToString());
+                    cmd.Parameters.AddWithValue("@productName", txtName.Text);
+                    cmd.Parameters.AddWithValue("@artistName", txtArtist.Text);
+                    cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtPrice.Text));
+                    cmd.Parameters.AddWithValue("@Quantity", int.Parse(txtQuantity.Text));
+                    cmd.Parameters.AddWithValue("@Description", txtDesc.Text);   
                     cmd.Parameters.AddWithValue("@image", Path.GetFileName(FileUpload1.PostedFile.FileName));
-                    cmd.Parameters.AddWithValue("@contentType", FileUpload1.PostedFile.ContentType);
-                    cmd.Parameters.AddWithValue("@data", bytes);
+                    cmd.Parameters.AddWithValue("@ContentType", FileUpload1.PostedFile.ContentType);
+                    cmd.Parameters.AddWithValue("@Data", bytes);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();

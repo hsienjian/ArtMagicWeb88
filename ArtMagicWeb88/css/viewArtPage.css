@@ -1,0 +1,41 @@
+﻿form#ctl01 {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+h1.text-center {
+    
+    height: 50px;
+    width: 1200px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    background-color: lightblue;
+}
+
+table#MainContent_DataList1 {
+    width: 1200px;
+}
+
+td.text-justify {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    text-align: justify;
+    border-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+img {
+    height: 300px;
+    width: 390px;
+}
+
+input{
+    background:black;
+}
+
+td {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}

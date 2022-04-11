@@ -15,13 +15,22 @@ namespace ArtMagicWeb88
     {
 
         /// <summary>
-        /// WishList1 control.
+        /// lblNumOfArtwork control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView WishList1;
+        protected global::System.Web.UI.WebControls.Label lblNumOfArtwork;
+
+        /// <summary>
+        /// lvWishList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lvWishList;
 
         /// <summary>
         /// lblError control.

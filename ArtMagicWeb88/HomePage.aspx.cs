@@ -15,7 +15,15 @@ namespace ArtMagicWeb88
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //if (Session["Artist_id"] != null)
+            //{
+            //    lblSuccess.Text = "success";
+            //}
+            //else
+            //{
+            //    Response.Write("<script>alert('You are not allowed to visit this page');</script>");
+            //    Response.Redirect("~/HomePage.aspx");
+            //}
         }
 
         

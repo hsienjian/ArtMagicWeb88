@@ -1,0 +1,25 @@
+﻿body {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    color: white;
+}
+
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#MainContent_Image2, #MainContent_Image5 {
+    margin-right: 7px;
+}
+
+#MainContent_Image3, #MainContent_Image6 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#MainContent_Image4, #MainContent_Image7 {
+    margin-left: 7px;
+}

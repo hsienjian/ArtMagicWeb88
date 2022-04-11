@@ -1,13 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="add.aspx.cs" Inherits="ArtMagicWeb88.testing1234" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteArtist.Master" CodeBehind="add.aspx.cs" Inherits="ArtMagicWeb88.testing1234" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <%--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>--%>
     <style type="text/css">
         body
         {
+            width:0%;
+            background-color:whitesmoke;
             font-family: Arial;
             font-size: 10pt;
         }
@@ -40,43 +39,64 @@
             cursor: pointer;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    Product Name: <asp:TextBox ID="productName" runat="server"></asp:TextBox>
+
+    <div style="margin-left:500px;">
+    &nbsp;&nbsp;
+    <br />
+    &nbsp; Artist name: <asp:TextBox ID="txtArtist" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;
+    Price :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
         <br />
-        Artist Name :
-        <asp:TextBox ID="artistName" runat="server"></asp:TextBox>
         <br />
-    Price : <asp:TextBox ID="price" runat="server"></asp:TextBox>
+    &nbsp;
+    Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtName" runat="server" style="margin-left: 0px"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+    Quantity : <asp:TextBox ID="txtQuantity" runat="server"></asp:TextBox>
         <br />
-    Quantity :
-        <asp:TextBox ID="quantity" runat="server"></asp:TextBox>
         <br />
-    Description: <asp:TextBox ID="desc" runat="server"></asp:TextBox>
+    &nbsp;
+    Description: <asp:TextBox ID="txtDesc" runat="server" Height="92px" Width="371px"></asp:TextBox>
         <br />
-    Image: <asp:FileUpload ID="FileUpload1" runat="server" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
+    &nbsp;
+    Image:<asp:FileUpload ID="FileUpload1" runat="server" />
+        &nbsp;<br />
+        <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <hr />
-    <asp:GridView ID="gvImages" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound">
+    <asp:GridView ID="gvImages" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
         <Columns>
-            <asp:BoundField DataField="productId" HeaderText="Product ID" />
-            <asp:BoundField DataField="productName" HeaderText="Product Name" />
-            <asp:BoundField DataField="artistName" HeaderText="Artist Name" />
-            <asp:BoundField DataField="price" HeaderText="Price" />
-            <asp:BoundField DataField="quantity" HeaderText="Quantity" />
-            <asp:BoundField DataField="description" HeaderText="Description" />
+            <asp:BoundField DataField="userid" HeaderText="UserId" />
+            <asp:BoundField DataField="productId" HeaderText="productId" />
+            <asp:BoundField DataField="productName" HeaderText="productName" />
+            <asp:BoundField DataField="artistName" HeaderText="artistName" />
+            <asp:BoundField DataField="Price" HeaderText="Price" />
+            <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
+            <asp:BoundField DataField="Description" HeaderText="Description" />
             <asp:BoundField DataField="image" HeaderText="ImgName" />
-            <asp:TemplateField HeaderText="Product Image">
+            <asp:TemplateField HeaderText="Image">
                 <ItemTemplate>
                     <asp:Image ID="Image1" runat="server" />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+        <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+        <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+        <RowStyle ForeColor="#8C4510" BackColor="#FFF7E7" />
+        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#FFF1D4" />
+        <SortedAscendingHeaderStyle BackColor="#B95C30" />
+        <SortedDescendingCellStyle BackColor="#F1E5CE" />
+        <SortedDescendingHeaderStyle BackColor="#93451F" />
     </asp:GridView>
     <div id="dialog" style="display: none">
     </div>
+        </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/start/jquery-ui.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
@@ -96,6 +116,4 @@
             });
         });
     </script>
-    </form>
-</body>
-</html>
+    </asp:Content>
