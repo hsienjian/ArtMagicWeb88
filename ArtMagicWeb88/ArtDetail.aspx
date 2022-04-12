@@ -2,12 +2,12 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <link rel="stylesheet" href="../css/ArtDetail.css" />
+    <link href ="css/background.css" rel="stylesheet" />
 
-    <div class="container-fuild px-sm-1 py-5 mx-auto" style="background-color: #D4D8DD">
+    <div class="container-fuild px-sm-1 py-5 mx-auto" >
         <div class="row justify-content-center">
             <div class="d-flex">
-                <div class="card card-1" style="margin-top: 10%; background-color: rgba(255,255,255,0.6);">
+                <div class="card card-1" style="margin-top: 10%; ">
                     <asp:FormView ID="FormView" runat="server" Width="100%" OnItemCommand="itemCommandClick">
                         <ItemTemplate>
                             <div class="product-pic" style="text-align: center; margin-bottom: 18px">

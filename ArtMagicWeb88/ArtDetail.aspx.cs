@@ -23,7 +23,7 @@ namespace ArtMagicWeb88
 
 
                 con.Open();
-                string artChosen = "SELECT * FROM Product P, ArtistAccount A WHERE P.productId='" + productId + "' AND P.Artist_id = A.Artist_id";
+                string artChosen = "SELECT * FROM Product P, ArtistAccount A WHERE P.productId='" + productId + "' AND P.userid = A.Artist_id";
                 SqlCommand artRecord = new SqlCommand(artChosen, con);
                 SqlDataAdapter sda = new SqlDataAdapter();
                 sda.SelectCommand = artRecord;
@@ -86,7 +86,7 @@ namespace ArtMagicWeb88
             else
             {
                 con.Open();
-                string query = "Delete WishList Where productId=@productId AND Cus_id=@Cus_id ";
+                string query = "Delete Cart Where productId=@productId AND Cus_id=@Cus_id ";
                 SqlCommand cmdAdd = new SqlCommand(query, con);
                 cmdAdd.Parameters.AddWithValue("@productId", commandArgument);
                 cmdAdd.Parameters.AddWithValue("@Cus_id", userID);

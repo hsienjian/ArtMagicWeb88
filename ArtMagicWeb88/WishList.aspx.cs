@@ -140,7 +140,7 @@ namespace ArtMagicWeb88
         {
             createConnection();
             string query =
-                "Select Product.productId, Product.ProductName,  Product.data, Product.Price, WishList.productId From Product " +
+                "Select Product.productId, Product.ProductName,  Product.data, Product.description, Product.Price, WishList.productId From Product " +
                 "INNER JOIN WishList ON Product.productId = WishList.productId AND WishList.Cus_id = @Cus_id";
             var command = new SqlCommand(query, conn);
             command.Parameters.AddWithValue("@Cus_id", Cus_id);

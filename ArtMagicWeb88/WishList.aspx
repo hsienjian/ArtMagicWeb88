@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/login.Master" CodeBehind="WishList.aspx.cs" Inherits="ArtMagicWeb88.WishList" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    <link href ="css/background.css" rel="stylesheet" />
 
 
 
@@ -34,26 +34,24 @@
                                         <div class="col-10 font-style-1">
                                             <h5>Product Name: <%# Eval("productName") %></h5>
                                         </div>
-                                        <div class="col-2">
-                                            <asp:LinkButton ID="lbDeleteWishListItem" CommandName="cmdDelete" CommandArgument='<%#Eval("productId")%>' OnCommand="lbDelete_Command" runat="server">
-                                                <svg t="1628105900669" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12307" width="23" height="23"><path d="M761.1 782.4c-6.4 0-12.8-2.4-17.7-7.3L253.2 284.8c-9.8-9.8-9.8-25.6 0-35.4 9.8-9.8 25.6-9.8 35.4 0l490.2 490.2c9.8 9.8 9.8 25.6 0 35.4-4.9 4.9-11.3 7.4-17.7 7.4z" p-id="12308"></path><path d="M270.9 782.4c-6.4 0-12.8-2.4-17.7-7.3-9.8-9.8-9.8-25.6 0-35.4l490.2-490.2c9.8-9.8 25.6-9.8 35.4 0 9.8 9.8 9.8 25.6 0 35.4L288.6 775c-4.9 4.9-11.3 7.4-17.7 7.4z" p-id="12309"></path></svg>
-                                            </asp:LinkButton>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 font-style-2">
+                                            <p class="text-muted;color">Description: <%# (Eval("description"))%></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 font-style-2">
-                                            <p class="text-muted">Price: <%# (Eval("price"))%></p>
+                                            <p class="text-muted;color">Price: <%# (Eval("price"))%></p>
                                         </div>
                                     </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-3 col-md-2 mr-2 font-style-2">
-                                            <asp:LinkButton ID="LinkButton1" CssClass="btn btn-secondary" runat="server">
-                                                <svg t="1628105431911" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8465" width="19" height="19">
-                                                    <path d="M875.136 327.936h-124.928c4.608-27.776 0-55.552-9.216-87.936C703.872 110.336 569.6 36.352 439.936 68.736c-60.16 23.168-111.104 64.768-143.488 120.32-23.168 41.728-32.384 92.544-32.384 138.88h-120.32C125.184 327.936 111.36 341.76 111.36 364.928v365.696c0 124.928 101.888 231.424 231.424 231.424h217.6c18.56 0 36.992-13.824 36.992-36.992 0-23.168-13.824-36.992-36.992-36.992H338.176c-87.936 0-162.048-74.112-162.048-162.048V397.44h657.28v189.824c0 18.56 13.824 36.992 36.992 36.992 23.168 0 36.992-13.952 36.992-36.992V364.928c0.128-23.04-13.696-36.992-32.256-36.992z m-194.432 0H338.176c-4.608-36.992 0-74.112 18.56-106.496 23.168-41.6 60.16-69.376 106.496-83.328 92.544-27.776 189.824 27.776 212.992 120.32 4.48 23.168 9.088 46.336 4.48 69.504z m0 0" p-id="8466" fill="#ffffff"></path><path d="M875.136 712.192H731.648V568.704c0-18.56-13.824-32.384-36.992-32.384-18.56 0-32.384 13.952-32.384 36.992V716.8H518.656c-18.56 0-32.384 13.824-32.384 36.992 0 18.56 13.824 32.384 36.992 32.384H666.88v143.488c0 18.56 13.824 32.384 36.992 32.384 18.56 0 32.384-13.824 32.384-36.992V781.568h143.488c18.56 0 32.384-13.824 32.384-36.992-4.608-18.56-18.432-32.384-36.992-32.384z m0 0" p-id="8467" fill="#ffffff"></path></svg>
+                                    <div class="col-2">
+                                            <asp:LinkButton ID="lbDeleteWishListItem" CommandName="cmdDelete" CommandArgument='<%#Eval("productId")%>' OnCommand="lbDelete_Command" runat="server">
+                                                <svg t="1628105900669" class="icon;color" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12307" width="23" height="23"><path d="M761.1 782.4c-6.4 0-12.8-2.4-17.7-7.3L253.2 284.8c-9.8-9.8-9.8-25.6 0-35.4 9.8-9.8 25.6-9.8 35.4 0l490.2 490.2c9.8 9.8 9.8 25.6 0 35.4-4.9 4.9-11.3 7.4-17.7 7.4z" p-id="12308"></path><path d="M270.9 782.4c-6.4 0-12.8-2.4-17.7-7.3-9.8-9.8-9.8-25.6 0-35.4l490.2-490.2c9.8-9.8 25.6-9.8 35.4 0 9.8 9.8 9.8 25.6 0 35.4L288.6 775c-4.9 4.9-11.3 7.4-17.7 7.4z" p-id="12309"></path></svg>
                                             </asp:LinkButton>
                                         </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
