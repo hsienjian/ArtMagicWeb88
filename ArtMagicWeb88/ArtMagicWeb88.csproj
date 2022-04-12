@@ -111,6 +111,7 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="ArtDetail.aspx" />
     <Content Include="ArtistRegisterPage.aspx" />
     <Content Include="ArtLoginPage.aspx" />
     <Content Include="checkOut.aspx" />
@@ -209,6 +210,13 @@
       <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ArtDetail.aspx.cs">
+      <DependentUpon>ArtDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtDetail.aspx.designer.cs">
+      <DependentUpon>ArtDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ArtistRegisterPage.aspx.cs">
       <DependentUpon>ArtistRegisterPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

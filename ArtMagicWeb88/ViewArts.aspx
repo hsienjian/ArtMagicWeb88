@@ -7,40 +7,24 @@
     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     <br />
     <br />
-    <asp:DataList ID="DataList1" runat="server"  RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="3" BackColor="White" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" OnItemCommand="DataList1_ItemCommand" OnItemDataBound="Item_Bound" >
-        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-        <ItemStyle  ForeColor="white" />
-        <ItemTemplate>
-            <table>
-                <tr>
-                    
-                    <td class="text-justify">
-                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("productId") %>' Visible="False"></asp:Label>
-                        <img src='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Data")) %>'  />
-                        <br />
-                        Product Name: <asp:Label ID="Label3" runat="server" Text='<%# Eval("productName") %>'></asp:Label>
-                        <br />
-                        Artist Name: <asp:Label ID="Label4" runat="server" Text='<%# Eval("artistName") %>'></asp:Label>
-                        <br />
-                        Price:<strong> <asp:Label ID="Label5" runat="server" Text='<%# Eval("price") %>'></asp:Label></strong>
-                        <br />
-                        Stock Left: <strong><asp:Label ID="Label6" runat="server" Text='<%# Eval("quantity") %>'></asp:Label></strong>
-                        <br />
-                        <br />
-                        <asp:Button ID="btnCart" runat="server" Text="Add To Cart" CommandName="addtocart"  />
-                        &nbsp;&nbsp;
-                        <asp:Button ID="btnWishList" runat="server" Text="Add To Wish List" CommandName="addtowishlist" />
-                        <asp:HiddenField ID="hiddenID" runat="server" Value='<%#Eval ("productId") %>'></asp:HiddenField>
-                    </td>
-                      
-                </tr>
-                
-            </table> 
-        </ItemTemplate>
-        <SelectedItemStyle  Font-Bold="True" ForeColor="#663399" />
-    
-    </asp:DataList>
+    <asp:DataList ID="ListofArt" runat="server" Width="100%" RepeatDirection="Horizontal" OnItemCommand="ListofArt_OnItemCommand" RepeatColumns="3" ShowFooter="False" ShowHeader="False">
+            <ItemTemplate>
+                <td style='text-align: center; padding: 10px;'>
+                    <img class="img-thumbnail" alt="artImg" style="height: 280px; width: 280px" src='<%#"data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("data")) %>' /><br />
+                    <asp:LinkButton ID="moreDetials" CommandName="ImageButtonClick" runat="server">
+                        <h6 style="color:#675A51; font-weight:bold">Product Name: <%#Eval ("productName") %></h6>
+                        <p style="color:black; font-size: 14px">Price: RM<%#Eval ("price") %></p>
+                        <p style="color:black; font-size: 14px">Quantity :<%#Eval ("quantity") %></p>
+                        <p style="color:black; font-size: 14px">Description: <%#Eval ("description") %></p>
+
+                    </asp:LinkButton>
+                    <asp:HiddenField ID="HiddenID" runat="server" Value='<%#Eval("productId") %>' />
+                </td>
+            </ItemTemplate>
+            <FooterTemplate>
+            </FooterTemplate>
+
+        </asp:DataList>
      <br />
     <br />
     <br />

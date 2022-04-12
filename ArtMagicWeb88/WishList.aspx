@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-12 font-style-2">
-                                            <p class="text-muted"><%# Convert.ToDouble(Eval("Price")).ToString("C")%></p>
+                                            <p class="text-muted"><%# (Eval("price"))%></p>
                                         </div>
                                     </div>
                                     
@@ -56,7 +56,7 @@
                                         <div class="col-2 col-md-2 font-style-2">
 
                                             <asp:LinkButton ID="LinkButton2" CssClass="btn btn-primary" runat="server">
-                                                Order
+                                                Add to Cart
                                             </asp:LinkButton>
                                         </div>
                                     </div>

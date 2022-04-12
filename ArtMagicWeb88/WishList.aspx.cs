@@ -20,6 +20,9 @@ namespace ArtMagicWeb88
             if (!this.IsPostBack)
             {
                 bindData();
+                bindData();
+                //count wishlist items
+                lblNumOfArtwork.Text = countWishListItems(userID) + " Artworks";
             }
         }
 
@@ -67,7 +70,12 @@ namespace ArtMagicWeb88
 
             ClientScript.RegisterStartupScript(this.GetType(), "Popup", "ShowPopup('" + title + "', '" + body + "', '" + sucess + "', '" + unsucess + "');", true);
 
-            
+            //bindData Again to update listview and count the items in wishlist again
+            bindData();
+            string countNumItems = countWishListItems(userID).ToString();
+            Label lbl = Master.FindControl("lblWishListNum") as Label;
+            lbl.Text = countNumItems;
+            lblNumOfArtwork.Text = countNumItems + " Product Item";
         }
 
         //private void GetData()
