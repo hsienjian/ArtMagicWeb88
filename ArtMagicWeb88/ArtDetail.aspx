@@ -50,9 +50,6 @@
                                         <asp:LinkButton ID="lbAddToCart" CssClass="btn btn-info" runat="server" CommandName="addToCart">
                                             <p class="mb-0">Add to cart</p>
                                         </asp:LinkButton>
-                                        <asp:LinkButton ID="lbBuyNow" CssClass="btn btn-primary" runat="server" CommandName="clickEvent">
-                                            <p class="mb-0">Buy Now</p>
-                                        </asp:LinkButton>
                                         <asp:HiddenField ID="hiddenID" runat="server" Value='<%#Eval ("productId") %>'></asp:HiddenField>
                                     </div>
                                 </div>

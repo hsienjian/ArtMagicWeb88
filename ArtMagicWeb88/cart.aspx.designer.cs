@@ -15,57 +15,30 @@ namespace ArtMagicWeb88
     {
 
         /// <summary>
-        /// ShoppingCartTitle control.
+        /// lblNumOfCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ShoppingCartTitle;
+        protected global::System.Web.UI.WebControls.Label lblNumOfCart;
 
         /// <summary>
-        /// CartList control.
+        /// lvCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView CartList;
+        protected global::System.Web.UI.WebControls.ListView lvCart;
 
         /// <summary>
-        /// LabelTotalText control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTotalText;
-
-        /// <summary>
-        /// lblTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotal;
-
-        /// <summary>
-        /// btnUpdateCart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdateCart;
-
-        /// <summary>
-        /// btnCheckOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCheckOut;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

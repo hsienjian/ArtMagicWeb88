@@ -19,7 +19,7 @@ namespace ArtMagicWeb88
             if (Session["Cus_id"] != null)
             {
 
-                Response.Write("<script>alert('session successful');</script>");
+                
                 con.Open();
                 SqlCommand cmdImageupload = new SqlCommand("SELECT * FROM [Product] P, [ArtistAccount] A WHERE A.Artist_id = A.Artist_id", con);
                 SqlDataAdapter sda = new SqlDataAdapter();

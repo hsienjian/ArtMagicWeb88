@@ -59,12 +59,75 @@ namespace ArtMagicWeb88
                 case "addToWishList":
                     addWishList(artID.Value);
                     break;
+                case "addToCart":
+                    addToCart(artID.Value);
+                    break;
+
             }
 
         }
         protected void buyNow(string commandArgument)
         {
             Response.Redirect("ViewArts.aspx"); //to buy now page
+        }
+
+        protected void addToCart(string commandArgument)
+        {
+            LinkButton lbAddToCart = (LinkButton)FormView.FindControl("lbAddToCart");
+            if (countExistingCartItems(commandArgument, userID))
+            {
+                con.Open();
+                string insertCartItems =
+                    "INSERT INTO Cart (productId, Cus_id) " +
+                    "VALUES (@productId, @Cus_id)";
+                SqlCommand cmdAdd = new SqlCommand(insertCartItems, con);
+                cmdAdd.Parameters.AddWithValue("@productId", commandArgument);
+                cmdAdd.Parameters.AddWithValue("@Cus_id", userID);
+                cmdAdd.ExecuteNonQuery();
+                con.Close();
+                lbAddToCart.CssClass = "btn btn-danger";
+            }
+            else
+            {
+                con.Open();
+                string query = "Delete WishList Where productId=@productId AND Cus_id=@Cus_id ";
+                SqlCommand cmdAdd = new SqlCommand(query, con);
+                cmdAdd.Parameters.AddWithValue("@productId", commandArgument);
+                cmdAdd.Parameters.AddWithValue("@Cus_id", userID);
+                cmdAdd.ExecuteNonQuery();
+                con.Close();
+                lbAddToCart.CssClass = "btn btn-secondary";
+            }
+            Label lbl = Master.FindControl("lblCartNum") as Label;
+            lbl.Text = countCartItems(userID).ToString();
+        }
+
+        protected int countCartItems(string Cus_id)
+        {
+            con.Open();
+            string query = "Select Count(*) from Cart where Cus_id= @Cus_id";
+            SqlCommand cmdSelect = new SqlCommand(query, con);
+            cmdSelect.Parameters.AddWithValue("@Cus_id", Cus_id);
+            int numberOfItems = int.Parse(cmdSelect.ExecuteScalar().ToString());
+            con.Close();
+
+            return numberOfItems;
+
+        }
+
+        protected Boolean countExistingCartItems(string productId, string Cus_id)
+        {
+            con.Open();
+
+            string query = "Select Count(*) from Cart where productId=@productId AND Cus_id= @Cus_id";
+            SqlCommand cmdSelect = new SqlCommand(query, con);
+            cmdSelect.Parameters.AddWithValue("@productId", productId);
+            cmdSelect.Parameters.AddWithValue("@Cus_id", Cus_id);
+            int numberOfItems = int.Parse(cmdSelect.ExecuteScalar().ToString());
+            con.Close();
+
+            return (numberOfItems == 0 ? true : false);
+
         }
 
         protected void addWishList(string commandArgument)

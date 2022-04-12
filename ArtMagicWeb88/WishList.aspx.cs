@@ -19,7 +19,7 @@ namespace ArtMagicWeb88
             userID = Session["Cus_id"].ToString();
             if (!this.IsPostBack)
             {
-                bindData();
+                
                 bindData();
                 //count wishlist items
                 lblNumOfArtwork.Text = countWishListItems(userID) + " Artworks";

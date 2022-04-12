@@ -52,9 +52,9 @@
                     <ul class="nav navbar-nav">
                         
                         <li><a runat="server" href="~/ViewArts.aspx">Gallery</a></li>
-                        <li><a runat="server" href="~/cart.aspx">Add To Cart</a></li>
+                        <li><a runat="server" href="~/cart.aspx">Add To Cart</a><asp:Label ID="lblCartNum" CssClass="badge badge-danger badge-position" Text="0" runat="server"></asp:Label></li>
 
-                        <li><asp:Label ID="lblWishListNum" CssClass="badge badge-danger badge-position" Text="0" runat="server"></asp:Label><a runat="server" href="~/WishList.aspx">WishList</a></li>
+                        <li><a runat="server" href="~/WishList.aspx">WishList</a><asp:Label ID="lblWishListNum" CssClass="badge badge-danger badge-position" Text="0" runat="server"></asp:Label></li>
                         <li><a runat="server" href="#">Edit Profile</a></li>
                         <li><asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click" style="background-color:white; margin-top:13px;"    ForeColor="Black" /></li>
                     </ul>
