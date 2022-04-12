@@ -21,7 +21,7 @@ namespace ArtMagicWeb88
             {
                 
                 bindData();
-                //count wishlist items
+                //count cart items
                 lblNumOfCart.Text = countCartItems(userID) + " Artworks";
             }
         }
@@ -76,6 +76,12 @@ namespace ArtMagicWeb88
             Label lbl = Master.FindControl("lblCartNum") as Label;
             lbl.Text = countNumItems;
             lblNumOfCart.Text = countNumItems + " Product Item";
+        }
+
+        protected void CheckOut_Command(Object sender, CommandEventArgs e)
+        {
+            Response.Redirect("checkOut.aspx?");
+
         }
 
         protected DataTable bindDataCartTable(string Cus_id)

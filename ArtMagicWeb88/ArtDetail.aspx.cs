@@ -66,10 +66,6 @@ namespace ArtMagicWeb88
             }
 
         }
-        protected void buyNow(string commandArgument)
-        {
-            Response.Redirect("ViewArts.aspx"); //to buy now page
-        }
 
         protected void addToCart(string commandArgument)
         {
@@ -100,6 +96,7 @@ namespace ArtMagicWeb88
             }
             Label lbl = Master.FindControl("lblCartNum") as Label;
             lbl.Text = countCartItems(userID).ToString();
+            
         }
 
         protected int countCartItems(string Cus_id)
