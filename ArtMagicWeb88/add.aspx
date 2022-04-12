@@ -1,12 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteArtist.Master" CodeBehind="add.aspx.cs" Inherits="ArtMagicWeb88.testing1234" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <%--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>--%>
+<%--    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>--%>
     <style type="text/css">
         body
         {
-            width:0%;
-            background-color:whitesmoke;
             font-family: Arial;
             font-size: 10pt;
         }
@@ -40,7 +38,6 @@
         }
     </style>
 
-    <div style="margin-left:500px;">
     &nbsp;&nbsp;
     <br />
     &nbsp; Artist name: <asp:TextBox ID="txtArtist" runat="server"></asp:TextBox>
@@ -96,7 +93,6 @@
     </asp:GridView>
     <div id="dialog" style="display: none">
     </div>
-        </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/start/jquery-ui.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>

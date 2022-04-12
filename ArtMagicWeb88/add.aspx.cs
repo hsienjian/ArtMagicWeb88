@@ -20,6 +20,10 @@ namespace ArtMagicWeb88
             {
                 //Label1.Text = Session["Artist_id"].ToString();
             }
+            if (Session["Artist_username"] != null)
+            {
+                txtArtist.Text = Session["Artist_username"].ToString();
+            }
 
             if (!this.IsPostBack)
             {

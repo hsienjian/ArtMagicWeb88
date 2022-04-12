@@ -53,6 +53,7 @@
                         <li><a runat="server" href="View.aspx">Home</a></li>
                         <li><a runat="server" href="add.aspx">Add</a></li>
                         <li><a runat="server" href="UpdateImage.aspx">Edit Image</a></li>
+                        <li><a runat="server" href="OrderRecord.aspx">Order Record</a></li>
                         <li><asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click" style="background-color:white; margin-top:13px;"    ForeColor="Black" /></li>
                     </ul>
                 </div>
@@ -62,8 +63,8 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-<footer class="footer font-style-1 " style="position: fixed;padding: 10px 10px 0px 10px; bottom: 0;width: 100%;height: 60px;  background-color: #1E2329;">
-                <div class="text-center">
+        <footer class="footer font-style-1 " style="position: fixed;padding: 10px 10px 0px 10px; bottom: 0;width: 100%;height: 60px;  background-color: #1E2329;">
+                <div class="container-fluid text-center">
                     <p style="margin-top: 10px; color: #A2A2A2;" class="text-muted">COPYRIGHT © 2021 ArtMagicWeb88 | DESIGNED BY ArtMagicWeb88</p>
                 </div>
         </footer>

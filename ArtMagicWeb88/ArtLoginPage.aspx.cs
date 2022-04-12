@@ -38,7 +38,8 @@ namespace ArtMagicWeb88
                     while (dtrInfo1.Read())
                     {
                         Session["Artist_id"] = dtrInfo1["Artist_id"].ToString();
-                        Response.Redirect("~/View.aspx");
+                        Session["Artist_username"] = dtrInfo1["Artist_username"].ToString();
+                    Response.Redirect("~/View.aspx");
                     }
                 }
             //int artID = dtrInfo1.GetInt32(dtrInfo1.GetOrdinal("Artist_id"));

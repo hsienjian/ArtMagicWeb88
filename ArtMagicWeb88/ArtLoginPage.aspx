@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="password" runat="server" placeholder="Password" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="password" runat="server" placeholder="Password" TextMode="Password" CssClass="input"></asp:TextBox>
 
                     </td>
                 </tr>
