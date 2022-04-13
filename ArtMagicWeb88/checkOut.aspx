@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/login.Master" AutoEventWireup="true" CodeBehind="checkOut.aspx.cs" Inherits="ArtMagicWeb88.checkOut" %>
-
+<%@ Register TagPrefix="greet" TagName="showGreet" Src="~/loginUserControl.ascx" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <greet:showGreet ID="ctlGreet" runat="server" />
     <link href="css/background.css" rel="stylesheet" />
     <p class="text-center">
         <br />
@@ -64,9 +65,10 @@
     <br />
     <br />
     Email Address :
-        <asp:TextBox ID="email" runat="server" ForeColor="Black"></asp:TextBox>
+        <asp:TextBox ID="email" runat="server" ForeColor="Black" TextMode="Email"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="email" Font-Size="Small" ForeColor="#CC3300" ErrorMessage="Please enter email address">*</asp:RequiredFieldValidator>
     <br />
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="email" ForeColor="#CC3300" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">* Please add @ within it</asp:RegularExpressionValidator>
     <br />
     Address :
         <asp:TextBox ID="address" runat="server" ForeColor="Black" Height="22px"></asp:TextBox>
@@ -76,6 +78,8 @@
     Phone Number :
         <asp:TextBox ID="pNumber" runat="server" ForeColor="Black"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="pNumber" Font-Size="Small" ForeColor="#CC3300" ErrorMessage="Please enter contact number">*</asp:RequiredFieldValidator>
+    <br />
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="pNumber" ForeColor="#CC3300" ValidationExpression="^(\+?6?01)[0|1|2|3|4|6|7|8|9]\-*[0-9]{7,8}$">* Only number available</asp:RegularExpressionValidator>
     <br />
     Payment Method :
         <asp:DropDownList ID="ddlPayment" runat="server" ForeColor="Black">

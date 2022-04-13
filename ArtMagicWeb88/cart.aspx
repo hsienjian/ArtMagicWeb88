@@ -96,7 +96,7 @@
                                 <svg t="1627927896276" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8928" width="200" height="200">
                                     <path d="M831.7 369.4H193.6L64 602v290.3h897.2V602L831.7 369.4zM626.6 604.6c0 62.9-51 113.9-114 113.9s-114-51-114-113.9H117.5l103.8-198h582.5l103.8 198h-281zM502.2 131h39.1v140.6h-39.1zM236.855 200.802l27.647-27.647 99.419 99.418-27.648 27.648zM667.547 272.637l99.418-99.419 27.648 27.648-99.418 99.418z" p-id="8929" fill="#cdcdcd"></path></svg>
                                 <p style="color: #cdcdcd;">Your Cart is empty, back to gallery add item to cart.</p>
-                                <asp:Button ID="btnContinue" CssClass="btn btn-dark mt-2" runat="server" Text="Back to Gallery" PostBackUrl="~/ViewArts.aspx" />
+                                <asp:Button ID="btnContinue" CssClass="btn btn-dark mt-2" style="color:black" runat="server" Text="Back to Gallery" PostBackUrl="~/ViewArts.aspx" />
                             </div>
                         </div>
                     </EmptyDataTemplate>

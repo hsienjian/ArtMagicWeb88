@@ -31,7 +31,7 @@
                                 <br />
                                 <br />
                                 <h6><b>Quantity : </b>
-                                    <asp:TextBox runat="server" ID="tbQuantity" Width="100px"></asp:TextBox></h6>
+                                    <asp:TextBox runat="server" ID="tbQuantity" Width="100px" TextMode="Number"></asp:TextBox></h6>
                                 <br />
                                 <asp:RangeValidator
                                     ID="RangeValidator" runat="server"
