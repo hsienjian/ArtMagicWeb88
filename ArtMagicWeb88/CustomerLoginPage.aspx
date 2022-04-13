@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="CustomerLoginPage.aspx.cs" Inherits="ArtMagicWeb88.CustomerLoginPage" %>
-
+<%@ Register TagPrefix="cDate" TagName="showDate" Src="~/WebUserControl1.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <cDate:showDate ID="ctlDate" runat="server" PageTitle="Welcome to Art Magic Web Gallery" />
 
 
     <link href ="css/loginPage.css" rel="stylesheet" />
@@ -15,9 +15,9 @@
             <label for="chk" aria-hidden="true">Customer Login</label>
             <table align = "center" >
                 <tr>
-                    <td >
+                    <td class="text-center" >
                         <asp:TextBox ID="email" runat="server" placeholder="Email" CssClass="input"></asp:TextBox>
-
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="email" ErrorMessage="* Please insert a valid email" Font-Size="Small" ForeColor="#CC3300" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </td>
 
                 </tr>

@@ -16,6 +16,8 @@ namespace ArtMagicWeb88
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            
             if (Session["Cus_id"] != null)
             {
 
@@ -34,7 +36,6 @@ namespace ArtMagicWeb88
             {
                 Response.Write("You are not allowed to visit this page");
             }
-            
         }
 
         

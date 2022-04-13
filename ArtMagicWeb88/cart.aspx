@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/login.Master" CodeBehind="cart.aspx.cs" Inherits="ArtMagicWeb88.cart" %>
+<%@ Register TagPrefix="greet" TagName="showGreet" Src="~/loginUserControl.ascx" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <greet:showGreet ID="ctlGreet" runat="server" />
     <link href ="css/background.css" rel="stylesheet" />
     <p class="text-center">
         <br />

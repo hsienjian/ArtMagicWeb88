@@ -43,23 +43,30 @@
     &nbsp; Artist name: <asp:TextBox ID="txtArtist" runat="server"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;
     Price :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPrice" ErrorMessage="Number Only" ForeColor="Red" ValidationExpression="^\d{0,8}(\.\d{1,4})?$">*</asp:RegularExpressionValidator>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtPrice" ErrorMessage="Price field required" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <br />
     &nbsp;
-    Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtName" runat="server" style="margin-left: 0px"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;&nbsp;
+    Product Name: <asp:TextBox ID="txtName" runat="server" style="margin-left: 0px"></asp:TextBox>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtName" ErrorMessage="Product Name field required" ForeColor="Red">*</asp:RequiredFieldValidator>
+    &nbsp;&nbsp;&nbsp;
 
-    Quantity : <asp:TextBox ID="txtQuantity" runat="server"></asp:TextBox>
+    Quantity : <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtQuantity" ErrorMessage="Quantity field required" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <br />
     &nbsp;
     Description: <asp:TextBox ID="txtDesc" runat="server" Height="92px" Width="371px"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtDesc" ErrorMessage="Description field required" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
     &nbsp;
     Image:<asp:FileUpload ID="FileUpload1" runat="server" />
-        &nbsp;<br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="FileUpload1" ErrorMessage="Image field required" ForeColor="Red">*</asp:RequiredFieldValidator>
+        &nbsp;<asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+    <br />
         <br />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload" />

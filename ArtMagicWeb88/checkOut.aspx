@@ -1,17 +1,18 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/login.Master" AutoEventWireup="true" CodeBehind="checkOut.aspx.cs" Inherits="ArtMagicWeb88.checkOut" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <link href ="css/background.css" rel="stylesheet" />
+    <link href="css/background.css" rel="stylesheet" />
     <p class="text-center">
         <br />
-        <span style="font-size: xx-large"><strong>CheckOut</strong></span></p>
+        <span style="font-size: xx-large"><strong>CheckOut</strong></span>
+    </p>
     <br />
     <br />
 
-        <div class="container-fluid mt-4 mb-5">
+    <div class="container-fluid mt-4 mb-5">
         <div class="container">
             <div class="row">
-                <asp:ListView ID="lvcheckOut" runat="server"  ItemPlaceholderID="itemPlaceHolder1" GroupPlaceholderID="groupPlaceHolder1">
+                <asp:ListView ID="lvcheckOut" runat="server" ItemPlaceholderID="itemPlaceHolder1" GroupPlaceholderID="groupPlaceHolder1">
                     <%-- Start Call all the Items --%>
                     <ItemTemplate>
                         <div class="col-12 col-md-6 mb-2">
@@ -24,7 +25,7 @@
                                         <div class="col-10 font-style-1">
                                             <h5>Product ID:<%# Eval("productId") %></h5>
                                         </div>
-                                       
+
                                     </div>
                                     <div class="row">
                                         <div class="col-12 font-style-2">
@@ -41,7 +42,7 @@
                                             <p class="text-muted;color">Price: <%# (Eval("price"))%></p>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -50,41 +51,47 @@
             </div>
         </div>
     </div>
-        <br />
-        <br />
-        <strong><p style="font-size: large">Please fill in your details below :</p>
-        <p style="font-size: large"><span style="font-size: x-small; color: #FF3300">**COD available only for Currently**</span></p></strong><br />
-        Full Name :
-        <asp:TextBox ID="fName" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        Email Address :
-        <asp:TextBox ID="email" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        Address :
-        <asp:TextBox ID="address" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        Phone Number :
-        <asp:TextBox ID="pNumber" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        Payment Method :
+    <br />
+    <br />
+    <strong>
+        <p style="font-size: large">Please fill in your details below :</p>
+        <p style="font-size: large"><span style="font-size: x-small; color: #FF3300">**COD available only for Currently**</span></p>
+    </strong>
+    <br />
+    Full Name :
+        <asp:TextBox ID="fName" runat="server" ForeColor="Black"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="email" Font-Size="Small" ForeColor="#CC3300" ErrorMessage="Please enter your name">*</asp:RequiredFieldValidator>
+    <br />
+    <br />
+    Email Address :
+        <asp:TextBox ID="email" runat="server" ForeColor="Black"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="email" Font-Size="Small" ForeColor="#CC3300" ErrorMessage="Please enter email address">*</asp:RequiredFieldValidator>
+    <br />
+    <br />
+    Address :
+        <asp:TextBox ID="address" runat="server" ForeColor="Black" Height="22px"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="address" Font-Size="Small" ForeColor="#CC3300" ErrorMessage="Please enter shipping address">*</asp:RequiredFieldValidator>
+    <br />
+    <br />
+    Phone Number :
+        <asp:TextBox ID="pNumber" runat="server" ForeColor="Black"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="pNumber" Font-Size="Small" ForeColor="#CC3300" ErrorMessage="Please enter contact number">*</asp:RequiredFieldValidator>
+    <br />
+    Payment Method :
         <asp:DropDownList ID="ddlPayment" runat="server" ForeColor="Black">
             <asp:ListItem>COD</asp:ListItem>
             <asp:ListItem Value="Card">Card</asp:ListItem>
             <asp:ListItem Value="E-Banking"></asp:ListItem>
         </asp:DropDownList>
-        <br />
-        <br />
-            Total Amount: <asp:TextBox ID="tAmount" runat="server" Enabled="False" BackColor="White" ForeColor="Black"></asp:TextBox>
-            
-        <br />
-        <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnConfirmPayment" runat="server" Text="Confirm Payment" BackColor="#990099" />
-        <br />
+    <br />
+    <br />
+    Total Amount:
+    <asp:TextBox ID="tAmount" runat="server" Enabled="False" BackColor="White" ForeColor="Black"></asp:TextBox>
+
+    <br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnConfirmPayment" runat="server" Text="Confirm Payment" BackColor="#990099" OnClick="btnConfirmPayment_Click" />
     <br />
     <br />
     <br />
@@ -93,8 +100,9 @@
     <br />
     <br />
     <br />
-        <br />
-        
+    <br />
+    <br />
+
 
 
 

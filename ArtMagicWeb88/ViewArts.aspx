@@ -1,8 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/login.Master" CodeBehind="ViewArts.aspx.cs" Inherits="ArtMagicWeb88.ViewArts" %>
+<%@ Register TagPrefix="greet" TagName="showGreet" Src="~/loginUserControl.ascx" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href ="css/viewArtPage.css" rel="stylesheet" />
     <br />
+
+    <greet:showGreet ID="ctlGreet" runat="server" />
+
     <h1 class="text-center"><strong><em>Gallery</em></strong></h1>
     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     <br />

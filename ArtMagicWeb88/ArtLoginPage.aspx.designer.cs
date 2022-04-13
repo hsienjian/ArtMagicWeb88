@@ -15,6 +15,15 @@ namespace ArtMagicWeb88
     {
 
         /// <summary>
+        /// ctlDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ArtMagicWeb88.WebUserControl1 ctlDate;
+
+        /// <summary>
         /// email control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace ArtMagicWeb88
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox email;
+
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
         /// password control.

@@ -21,8 +21,8 @@
                 </tr>
                 <tr>
                     <td >
-                        <asp:TextBox ID="regArtEmail" runat="server" placeholder="Email" CssClass="input"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="regArtEmail" Font-Size="Small" ForeColor="#CC3300">Please insert a valid email address with &quot;@&quot;.</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="regArtEmail" runat="server" placeholder="Email" CssClass="input" TextMode="Email"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="regArtEmail" Font-Size="Small" ForeColor="#CC3300">Email field is empty</asp:RequiredFieldValidator>
                     </td>
                 </tr>
                     <tr>

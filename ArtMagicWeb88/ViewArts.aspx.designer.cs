@@ -15,6 +15,15 @@ namespace ArtMagicWeb88
     {
 
         /// <summary>
+        /// ctlGreet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ArtMagicWeb88.loginUserControl ctlGreet;
+
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
